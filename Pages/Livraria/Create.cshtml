@@ -1,0 +1,62 @@
+﻿@page
+@model CreateModel
+
+@{
+    ViewData["Title"] = "Adicionar";
+}
+
+<h3>Cadastro de Livro</h3>
+
+<div class="col-md-12">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Livros.Codigo" class="control-label"></label>
+                    <input asp-for="Livros.Codigo" class="form-control" />
+                    <span asp-validation-for="Livros.Codigo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="form-group">
+                    <label asp-for="Livros.Nome" class="control-label"></label>
+                    <input asp-for="Livros.Nome" class="form-control" />
+                    <span asp-validation-for="Livros.Nome" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Livros.Autor" class="control-label"></label>
+                    <input asp-for="Livros.Autor" class="form-control" />
+                    <span asp-validation-for="Livros.Autor" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Livros.ISBN" class="control-label"></label>
+                    <input asp-for="Livros.ISBN" class="form-control" />
+                    <span asp-validation-for="Livros.ISBN" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Livros.AnoLancamento" class="control-label"></label>
+                    <input asp-for="Livros.AnoLancamento" class="form-control" />
+                    <span asp-validation-for="Livros.AnoLancamento" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Cadastrar" class="btn btn-success" />
+            <a asp-page="Index" class="btn btn-danger">Cancelar</a>
+        </div>
+    </form>
+</div>
+<br />
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
